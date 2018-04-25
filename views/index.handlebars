@@ -1,0 +1,31 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="/">Mongo Scraper</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/scrape">Scrape New Articles</a>
+  </li>
+</ul>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Mongo Scraper</h1>
+    <p class="lead"></p>
+  </div>
+</div>
+
+<div class="container">
+{{#each news}}
+<div class="card">
+  <div class="card-header">
+    <a href="https://stabmag.com{{link}}">
+      <h5 class="card-title">{{title}}</h5> 
+    </a>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{summary}}</p>
+  </div>
+  <a href="/articles/{{_id}}" class="btn btn-primary">Comment</a>
+</div>
+{{/each}}
+</div>
