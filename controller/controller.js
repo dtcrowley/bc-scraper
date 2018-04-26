@@ -54,17 +54,13 @@ router.get("/scrape", function (req, res){
         
     var $ = cheerio.load(html);
      
-    $("article").each(function(i, element){
+    $("h2.storyheading").each(function(i, element){
         
-        var title = $(element).find(".storyheading").children().text().trim();
-        var summary = $(element).find(".summary").children().text().trim();
-        var link = $(element).find(".storyheading").children("a").attr("href");
+        var title = $(element).children().text().trim();
+        // var summary = $(element).find(".summary").children().text().trim();
+        // var link = $(element).find(".storyheading").children("a").attr("href");
 
-        var newArticle = {
-            title: title,
-            summary: summary,
-            link: link
-        }
+        var newArticle = [];
 
         console.log(newArticle);
 
